@@ -28,7 +28,7 @@ import { Progress } from "@/components/ui/progress"
 import { Badge } from "@/components/ui/badge"
 import { toast } from "@/components/ui/use-toast"
 
-const SHEET_API_URL = 'https://script.google.com/macros/s/AKfycbxPsSSePFSXwsRFgRNYv4xUn205zI4hgeW04CTaqK7p3InSM1TKFCmTBqM5bNFZfHOIJA/exec';
+const SHEET_API_URL = 'https://script.google.com/macros/s/AKfycbypGlYvVv_nxEZvWqUaUdt-H1Kx3vLhHTySwEoRR18eNCDiAucE1Tg65Tye5LcyhHAuqQ/exec';
 
 type Document = {
   id: string;
@@ -235,10 +235,21 @@ const fetchDashboardData = async (currentUserName: string, isAdmin: boolean) => 
     // Sort documents
     allDocuments.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
-    const recentDocs = allDocuments.slice(0, 10);
-    const renewalDocs = allDocuments
-      .filter(doc => doc.needsRenewal)
-      .slice(0, 5);
+const recentDocs = allDocuments.slice(0, 10);
+const renewalDocs = allDocuments
+  .filter(doc => doc.needsRenewal)
+  .slice(0, 5);
+
+  if (recentSharedDocuments.length > 0) {
+  recentSharedDocuments.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+}
+
+return {
+  stats: statsData,
+  recentDocuments: recentDocs,
+  sharedDocuments: recentSharedDocuments,
+  renewalDocuments: renewalDocs,
+};
 
     return {
       stats: statsData,
