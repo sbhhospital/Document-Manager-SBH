@@ -486,7 +486,7 @@ useEffect(() => {
           .slice(1)
           .filter(
             (doc: any[]) =>
-              !doc[15] || !doc[15].toString().toLowerCase().includes("deleted")
+              !doc[14] || !doc[14].toString().toLowerCase().includes("deleted")
           )
           .map((doc: any[], index: number) => ({
             id: index + 1,
