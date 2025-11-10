@@ -1227,38 +1227,40 @@ const handleFilterChange = (value: DocumentFilter) => {
                                   </Button>
                                 </DropdownMenuTrigger>
                                 <DropdownMenuContent
-  align="end"
-  className="border-[#7569F6]/20"
->
-  <DropdownMenuItem
-    className="cursor-pointer text-[#7569F6] hover:bg-[#7569F6]/10"
-    onClick={() =>
-      handleDownloadDocument(
-        doc.imageUrl,
-        doc.name
-      )
-    }
-  >
-    <Download className="h-4 w-4 mr-2" />
-    Download
-  </DropdownMenuItem>
-  {userRole?.toLowerCase() === "admin" && (
-    <DropdownMenuItem
-      className="cursor-pointer text-[#7569F6] hover:bg-[#7569F6]/10"
-      onClick={() => handleEditRenewalClick(doc)}
-    >
-      <RefreshCw className="h-4 w-4 mr-2" />
-      Update Renewal
-    </DropdownMenuItem>
-  )}
-</DropdownMenuContent>
+                                  align="end"
+                                  className="border-[#7569F6]/20"
+                                >
+                                  <DropdownMenuItem
+                                    className="cursor-pointer text-[#7569F6] hover:bg-[#7569F6]/10"
+                                    onClick={() =>
+                                      handleDownloadDocument(
+                                        doc.imageUrl,
+                                        doc.name
+                                      )
+                                    }
+                                  >
+                                    <Download className="h-4 w-4 mr-2" />
+                                    Download
+                                  </DropdownMenuItem>
+                                  {userRole?.toLowerCase() === "admin" && (
+                                    <DropdownMenuItem
+                                      className="cursor-pointer text-[#7569F6] hover:bg-[#7569F6]/10"
+                                      onClick={() =>
+                                        handleEditRenewalClick(doc)
+                                      }
+                                    >
+                                      <RefreshCw className="h-4 w-4 mr-2" />
+                                      Update Renewal
+                                    </DropdownMenuItem>
+                                  )}
+                                </DropdownMenuContent>
                               </DropdownMenu>
                             </TableCell>
                             <TableCell className="p-2 md:p-4 font-mono text-sm">
                               {doc.serialNo || "-"}
                             </TableCell>
                             <TableCell className="p-2 md:p-4">
-                              <div className="flex items-center min-w-0">
+                              <div className="flex items-center">
                                 {doc.category === "Personal" ? (
                                   <User className="h-4 w-4 mr-2 text-[#7569F6] flex-shrink-0" />
                                 ) : doc.category === "Company" ? (
@@ -1267,7 +1269,7 @@ const handleFilterChange = (value: DocumentFilter) => {
                                   <Users className="h-4 w-4 mr-2 text-[#935DF6] flex-shrink-0" />
                                 )}
                                 <div className="min-w-0">
-                                  <div className="font-medium truncate text-sm md:text-base">
+                                  <div className="font-medium whitespace-normal break-words text-sm md:text-base">
                                     {doc.name}
                                   </div>
                                   <div className="md:hidden text-xs text-gray-500 truncate">
@@ -1432,28 +1434,28 @@ const handleFilterChange = (value: DocumentFilter) => {
                             </Button>
                           </DropdownMenuTrigger>
                           <DropdownMenuContent
-  align="end"
-  className="border-[#7569F6]/20"
->
-  <DropdownMenuItem
-    className="cursor-pointer text-[#7569F6] hover:bg-[#7569F6]/10"
-    onClick={() =>
-      handleDownloadDocument(doc.imageUrl, doc.name)
-    }
-  >
-    <Download className="h-4 w-4 mr-2" />
-    Download
-  </DropdownMenuItem>
-  {userRole?.toLowerCase() === "admin" && (
-    <DropdownMenuItem
-      className="cursor-pointer text-[#7569F6] hover:bg-[#7569F6]/10"
-      onClick={() => handleEditRenewalClick(doc)}
-    >
-      <RefreshCw className="h-4 w-4 mr-2" />
-      Update Renewal
-    </DropdownMenuItem>
-  )}
-</DropdownMenuContent>
+                            align="end"
+                            className="border-[#7569F6]/20"
+                          >
+                            <DropdownMenuItem
+                              className="cursor-pointer text-[#7569F6] hover:bg-[#7569F6]/10"
+                              onClick={() =>
+                                handleDownloadDocument(doc.imageUrl, doc.name)
+                              }
+                            >
+                              <Download className="h-4 w-4 mr-2" />
+                              Download
+                            </DropdownMenuItem>
+                            {userRole?.toLowerCase() === "admin" && (
+                              <DropdownMenuItem
+                                className="cursor-pointer text-[#7569F6] hover:bg-[#7569F6]/10"
+                                onClick={() => handleEditRenewalClick(doc)}
+                              >
+                                <RefreshCw className="h-4 w-4 mr-2" />
+                                Update Renewal
+                              </DropdownMenuItem>
+                            )}
+                          </DropdownMenuContent>
                         </DropdownMenu>
                       </div>
 
