@@ -1413,7 +1413,7 @@ const handleFilterChange = (value: DocumentFilter) => {
                             <Users className="h-5 w-5 mr-2 text-[#935DF6] flex-shrink-0" />
                           )}
                           <div className="min-w-0">
-                            <div className="font-medium truncate text-sm">
+                            <div className="font-medium whitespace-normal break-words text-sm">
                               {doc.name}
                             </div>
                             <div className="text-xs text-gray-500 truncate">

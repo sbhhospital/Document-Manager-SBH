@@ -79,7 +79,7 @@ export default function SharedPage() {
 
         if (data.success && data.data) {
           const documents = data.data
-            .slice(1)
+            .slice(2)
             .map((row: any[], index: number) => {
               const rawDate = row[0]?.toString() || "";
               let displayDate = rawDate;
