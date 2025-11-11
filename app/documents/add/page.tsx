@@ -619,13 +619,14 @@ const handleSubmit = async (e: React.FormEvent) => {
                   <div className="border-t pt-3 mt-3">
                     <div className="space-y-2">
                       <Label htmlFor={`file-${index}`} className="text-sm font-medium text-gray-700">
-                        Upload File
+                        Upload File *
                       </Label>
                       <Input
                         id={`file-${index}`}
                         type="file"
                         onChange={(e) => handleMultipleFileChange(e, index)}
                         className="border-gray-300 text-sm bg-white"
+                        required
                       />
                       {fileItem.file && (
                         <p id={`file-info-${index}`} className="text-xs text-gray-500 truncate">
